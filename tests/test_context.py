@@ -236,7 +236,7 @@ class TestTracingContext(TestCase):
             child._parent = root
             ctx.add_span(child)
 
-            # CLose the first 5 only
+            # Close the first 5 only
             if i < 5:
                 child._finished = True
                 ctx.close_span(child)
