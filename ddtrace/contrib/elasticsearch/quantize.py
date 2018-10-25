@@ -1,6 +1,5 @@
 import re
-
-from ...ext import elasticsearch as metadata
+from . import metadata
 
 # Replace any ID
 ID_REGEXP = re.compile(r'/([0-9]+)([/\?]|$)')

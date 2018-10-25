@@ -26,7 +26,6 @@ PATCH_MODULES = {
     'celery': True,
     'elasticsearch': True,
     'futures': False,  # experimental propagation
-    'grpc': True,
     'mongoengine': True,
     'mysql': True,
     'mysqldb': True,
@@ -36,7 +35,7 @@ PATCH_MODULES = {
     'pymemcache': True,
     'pymongo': True,
     'redis': True,
-    'requests': True,
+    'requests': False,  # Not ready yet
     'sqlalchemy': False,  # Prefer DB client instrumentation
     'sqlite3': True,
     'aiohttp': True,  # requires asyncio (Python 3.4+)
@@ -44,16 +43,13 @@ PATCH_MODULES = {
     'aiobotocore': False,
     'httplib': False,
     'vertica': True,
-    'jinja2': True,
 
-    # Even though instrumentation for web frameworks can be installed manually,
-    # instrumenting should be done idempotently
-    'django': True,
-    'falcon': True,
-    'pyramid': True,
     # Ignore some web framework integrations that might be configured explicitly in code
+    "django": False,
     "flask": False,
+    "falcon": False,
     "pylons": False,
+    "pyramid": False,
 }
 
 _LOCK = threading.Lock()
