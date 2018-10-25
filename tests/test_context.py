@@ -228,7 +228,7 @@ class TestTracingContext(TestCase):
         tracer = get_dummy_tracer()
         ctx = Context()
 
-        # Create a root span with 5 children, all of the children are finished, the root is not
+        # Create a root span with 10 children, finishing the first 5 of them.
         root = Span(tracer=tracer, name='root')
         ctx.add_span(root)
         for i in range(10):
